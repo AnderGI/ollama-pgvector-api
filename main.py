@@ -11,8 +11,9 @@ def status():
   return Response(status_code=200)
 
 
-@app.put('/embed/{download_uuid}')
-async def embed_text(download_uuid: UUID4, file: UploadFile = File(...)):
+@app.put('/embed/{download_uuid}/{category}')
+async def embed_text(download_uuid: UUID4, file: UploadFile = File(...), category:str = ''):
+    print(category)
     file_location = f"{download_uuid}_{file.filename}"
     
     # Save the file first
@@ -34,7 +35,7 @@ async def embed_text(download_uuid: UUID4, file: UploadFile = File(...)):
         embedding = list_of_embeddings[0] 
         print(embedding)
 
-  
+
 
         return Response(status_code=202)
     except Exception as e:
