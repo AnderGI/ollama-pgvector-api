@@ -1,0 +1,24 @@
+GET http://localhost:8000/status
+
+### Wrong one
+PUT http://localhost:8000/embed/kjbhbhv
+
+{
+  "text":"hola"
+}
+
+
+### Wrong one
+PUT http://localhost:8000/embed/741d2c9a-135e-4c56-b866-bfe403b4a2df
+
+{
+  "text":true
+}
+
+
+### VAlid one
+PUT http://localhost:8000/embed/741d2c9a-135e-4c56-b866-bfe403b4a2df
+
+{
+  "text":"HOla"
+}
